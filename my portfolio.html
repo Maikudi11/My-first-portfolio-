@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -314,28 +315,68 @@
             transform: scale(1.05);
         }
 
-        /* Special style for the certificate link skill item */
-        .skill-cert-link {
+        /* ===== CERTIFICATES SECTION ===== */
+        #certificates {
+            background: #f8f9fa;
+        }
+
+        .cert-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cert-card {
+            background: #fff;
+            padding: 28px 24px;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            flex: 1 1 260px;
+            max-width: 320px;
+            border: 1px solid #eee;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+        }
+
+        .cert-icon {
+            font-size: 44px;
+            margin-bottom: 10px;
+        }
+
+        .cert-card h3 {
+            font-size: 20px;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+
+        .cert-card p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+
+        .cert-link {
+            display: inline-block;
             background: #1a1a2e;
             color: #fff;
-            padding: 10px 28px;
+            padding: 8px 24px;
             border-radius: 30px;
             font-weight: 500;
-            transition: 0.3s;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s, transform 0.2s;
         }
 
-        .skill-cert-link:hover {
+        .cert-link:hover {
             background: #e94560;
-            transform: scale(1.05);
-        }
-
-        .skill-cert-link a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
+            transform: scale(1.03);
         }
 
         /* ===== CONTACT ===== */
@@ -442,12 +483,12 @@
     <!-- ===== NAVIGATION ===== -->
     <nav>
         <div class="container nav-container">
-            <!-- Logo links to GitHub profile (Maikudi11) -->
             <a href="https://github.com/Maikudi11" class="logo" target="_blank">My Portfolio</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="hamburger" id="hamburger">☰</button>
@@ -499,10 +540,11 @@
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
 
+                <!-- Simple Calculator -->
                 <div class="project-card">
-                    <div class="project-icon">🌦️</div>
-                    <h3>Weather App</h3>
-                    <p>A simple weather app that fetches live data from an API.</p>
+                    <div class="project-icon">🧮</div>
+                    <h3>Simple Calculator</h3>
+                    <p>Basic calculator with add, subtract, multiply, divide and clear.</p>
                     <div class="tech-tags">
                         <span>HTML</span>
                         <span>CSS</span>
@@ -514,29 +556,14 @@
                     </div>
                 </div>
 
+                <!-- Beginner Website: Personal Bio / Landing Page -->
                 <div class="project-card">
-                    <div class="project-icon">✅</div>
-                    <h3>To-Do List</h3>
-                    <p>Task manager with add, edit, delete, and local storage support.</p>
+                    <div class="project-icon">🌱</div>
+                    <h3>Personal Bio Page</h3>
+                    <p>A clean one-page bio with intro, hobbies, and social links.</p>
                     <div class="tech-tags">
                         <span>HTML</span>
                         <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#">Live Demo</a>
-                        <a href="https://github.com/Maikudi11" target="_blank">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">🎮</div>
-                    <h3>Rock Paper Scissors</h3>
-                    <p>Classic game built with JavaScript logic and animations.</p>
-                    <div class="tech-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
                     </div>
                     <div class="project-links">
                         <a href="#">Live Demo</a>
@@ -556,13 +583,31 @@
                 <div class="skill-item">HTML5</div>
                 <div class="skill-item">CSS3</div>
                 <div class="skill-item">JavaScript</div>
-                <!-- FreeCodeCamp Certificate linked directly in the skill item -->
-                <div class="skill-cert-link">
+                <!-- skills remain clean, certificate moved below -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICATES ===== -->
+    <section id="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates</h2>
+            <div class="cert-grid">
+                <!-- Responsive Web Design Certificate -->
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <h3>Responsive Web Design</h3>
+                    <p>FreeCodeCamp certification — HTML & CSS, flexbox, grid, media queries.</p>
                     <a href="https://www.freecodecamp.org/certification/fcc-dbfff3e6-ff3d-4801-8e1d-06a04915d8f8/responsive-web-design-v9" 
                        target="_blank" 
-                       title="View my FreeCodeCamp Responsive Web Design Certificate">
-                        📜 Responsive Design
-                    </a>
+                       class="cert-link">View Certificate</a>
+                </div>
+                <!-- you can add more certificates later -->
+                <div class="cert-card">
+                    <div class="cert-icon">⚡</div>
+                    <h3>JavaScript Algorithms</h3>
+                    <p>FreeCodeCamp (in progress) — core JS, functions, arrays, objects.</p>
+                    <a href="#" class="cert-link">In Progress</a>
                 </div>
             </div>
         </div>
@@ -605,7 +650,7 @@
         });
 
         // ===== SMOOTH SCROLLING =====
-        http://localhost:8080/index.html('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -618,3 +663,4 @@
 
 </body>
 </html>
+```
